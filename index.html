@@ -414,7 +414,8 @@
       
         
           
-            <h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
+            <h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="http://upload-images.jianshu.io/upload_images/1498160-a2eef83074cfe5ec.gif?imageMogr2/auto-orient/strip" alt="0928_1.gif"></p>
+<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
 <li>先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。</li>
 </ul>
 <h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];</div><div class="line">NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;right_menu_multichat&quot;,@&quot;right_menu_QR&quot;];</div><div class="line">self.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(NSInteger selectIndex) &#123;</div><div class="line">    NSLog(@&quot;--&gt;&gt; selectIndex:%ld&quot;, (long)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
