@@ -63,9 +63,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -77,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -88,7 +88,7 @@
 思路：
 先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
 
-用法：12345NSArray *titles = @[@&amp;quot;添加好友&amp;quot;,@&amp;quot;多人会话&amp;quot;,@&amp;quot;扫一扫&amp;quot;];NSArray *icons =">
+用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="封装类似iPad中的UIPopoverController工具类">
 <meta property="og:url" content="http://www.hwacdx.com/2016/09/29/封装类似iPad中的UIPopoverController工具类/index.html">
@@ -97,7 +97,7 @@
 思路：
 先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
 
-用法：12345NSArray *titles = @[@&amp;quot;添加好友&amp;quot;,@&amp;quot;多人会话&amp;quot;,@&amp;quot;扫一扫&amp;quot;];NSArray *icons =">
+用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-a2eef83074cfe5ec.gif?imageMogr2/auto-orient/strip">
 <meta property="og:updated_time" content="2016-10-08T02:09:26.000Z">
 <meta name="twitter:card" content="summary">
@@ -106,15 +106,14 @@
 思路：
 先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
 
-用法：12345NSArray *titles = @[@&amp;quot;添加好友&amp;quot;,@&amp;quot;多人会话&amp;quot;,@&amp;quot;扫一扫&amp;quot;];NSArray *icons =">
+用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1498160-a2eef83074cfe5ec.gif?imageMogr2/auto-orient/strip">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
@@ -122,19 +121,9 @@
     duoshuo: {
       userId: 0,
       author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
-
-
-
 
   <title> 封装类似iPad中的UIPopoverController工具类 | 明镜亦非台的博客 </title>
 </head>
@@ -239,6 +228,7 @@
     
 
   
+  
 
   
   
@@ -306,7 +296,7 @@
 <h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
 <li>先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。</li>
 </ul>
-<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];</div><div class="line">NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;right_menu_multichat&quot;,@&quot;right_menu_QR&quot;];</div><div class="line">self.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(NSInteger selectIndex) &#123;</div><div class="line">    NSLog(@&quot;--&gt;&gt; selectIndex:%ld&quot;, (long)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *titles = @[<span class="string">@"添加好友"</span>,<span class="string">@"多人会话"</span>,<span class="string">@"扫一扫"</span>];</div><div class="line"><span class="built_in">NSArray</span> *icons = @[<span class="string">@"right_menu_addFriend"</span>,<span class="string">@"right_menu_multichat"</span>,<span class="string">@"right_menu_QR"</span>];</div><div class="line"><span class="keyword">self</span>.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(<span class="built_in">NSInteger</span> selectIndex) &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"--&gt;&gt; selectIndex:%ld"</span>, (<span class="keyword">long</span>)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
 <h5 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h5><ul>
 <li>下载此Demo之后，拖动HWPopoverView文件夹到项目中，导入HWPopoverView.h</li>
 <li>此工具类依赖Masonry，使用前请确保已安装Masonry。</li>
@@ -331,7 +321,6 @@
       
     </div>
 
-
     <footer class="post-footer">
       
 
@@ -340,8 +329,6 @@
           <div class="post-nav-next post-nav-item">
             
           </div>
-
-          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -447,15 +434,12 @@
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
-
             
               
             
-
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果："><span class="nav-number">1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路："><span class="nav-number">2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法："><span class="nav-number">3.</span> <span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装："><span class="nav-number">4.</span> <span class="nav-text">安装：</span></a></li></ol></div>
             
-
           </div>
         </section>
       
@@ -544,32 +528,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 
@@ -600,17 +584,33 @@
 
 
 
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
-  
 
   
-
-  
-
-  
-  
-
 
 </body>
 </html>
