@@ -84,15 +84,39 @@
 
 
 
-<meta name="description" content="90后iOS开发，现居广州">
-<meta property="og:type" content="website">
-<meta property="og:title" content="明镜亦非台的博客">
-<meta property="og:url" content="http://www.hwacdx.com/index.html">
+<meta name="description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+<meta property="og:type" content="article">
+<meta property="og:title" content="封装广告轮播视图工具类">
+<meta property="og:url" content="http://www.hwacdx.com/2016/10/08/封装广告轮播视图工具类/index.html">
 <meta property="og:site_name" content="明镜亦非台的博客">
-<meta property="og:description" content="90后iOS开发，现居广州">
+<meta property="og:description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2016-10-08T02:02:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="明镜亦非台的博客">
-<meta name="twitter:description" content="90后iOS开发，现居广州">
+<meta name="twitter:title" content="封装广告轮播视图工具类">
+<meta name="twitter:description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip">
 
 
 
@@ -121,7 +145,7 @@
 
 
 
-  <title> 明镜亦非台的博客 </title>
+  <title> 封装广告轮播视图工具类 | 明镜亦非台的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,9 +166,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -221,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -242,10 +264,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/08/封装广告轮播视图工具类/" itemprop="url">
-                  封装广告轮播视图工具类
-                </a>
+                封装广告轮播视图工具类
               
             
           </h1>
@@ -292,9 +311,7 @@
       
 
       
-        
-          
-            <h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip" alt="0920_7.gif"></p>
+        <h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip" alt="0920_7.gif"></p>
 <h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
 <li>先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。</li>
 <li>定时器每秒钟调用一次来实现自动滚动。</li>
@@ -315,16 +332,19 @@
 <p>Demo链接：<a href="https://github.com/hw20101101/AutoScrollView" target="_blank" rel="external">https://github.com/hw20101101/AutoScrollView</a></p>
 </blockquote>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -333,130 +353,34 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/29/封装类似iPad中的UIPopoverController工具类/" rel="next" title="封装类似iPad中的UIPopoverController工具类">
+                <i class="fa fa-chevron-left"></i> 封装类似iPad中的UIPopoverController工具类
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/29/封装类似iPad中的UIPopoverController工具类/" itemprop="url">
-                  封装类似iPad中的UIPopoverController工具类
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-29T22:35:50+08:00" content="2016-09-29">
-              2016-09-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/29/封装类似iPad中的UIPopoverController工具类/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/封装类似iPad中的UIPopoverController工具类/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
-<li>先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。</li>
-</ul>
-<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];</div><div class="line">NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;right_menu_multichat&quot;,@&quot;right_menu_QR&quot;];</div><div class="line">self.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(NSInteger selectIndex) &#123;</div><div class="line">    NSLog(@&quot;--&gt;&gt; selectIndex:%ld&quot;, (long)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<h5 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h5><ul>
-<li>下载此Demo之后，拖动HWPopoverView文件夹到项目中，导入HWPopoverView.h</li>
-<li>此工具类依赖Masonry，使用前请确保已安装Masonry。</li>
-</ul>
-<blockquote>
-<p>Demo链接：<a href="https://github.com/hw20101101/HWPopoverViewDemo" target="_blank" rel="external">https://github.com/hw20101101/HWPopoverViewDemo</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -464,6 +388,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/08/封装广告轮播视图工具类/"
+           data-title="封装广告轮播视图工具类" data-url="http://www.hwacdx.com/2016/10/08/封装广告轮播视图工具类/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -483,8 +415,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -520,6 +461,20 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果："><span class="nav-number">1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路："><span class="nav-number">2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法："><span class="nav-number">3.</span> <span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装："><span class="nav-number">4.</span> <span class="nav-text">安装：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
       
 
     </div>
@@ -623,6 +578,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
