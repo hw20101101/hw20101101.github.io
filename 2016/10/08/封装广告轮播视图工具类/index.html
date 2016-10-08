@@ -90,8 +90,9 @@
 定时器每秒钟调用一次来实现自动滚动。
 
 用法：
-根据远程图片创建轮播视图:
-123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+根据远程图片创建轮播视图: 
+
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/201210">
 <meta property="og:type" content="article">
 <meta property="og:title" content="封装广告轮播视图工具类">
 <meta property="og:url" content="http://www.hwacdx.com/2016/10/08/封装广告轮播视图工具类/index.html">
@@ -102,10 +103,11 @@
 定时器每秒钟调用一次来实现自动滚动。
 
 用法：
-根据远程图片创建轮播视图:
-123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+根据远程图片创建轮播视图: 
+
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/201210">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2016-10-08T02:02:00.000Z">
+<meta property="og:updated_time" content="2016-10-08T02:23:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装广告轮播视图工具类">
 <meta name="twitter:description" content="效果：
@@ -114,8 +116,9 @@
 定时器每秒钟调用一次来实现自动滚动。
 
 用法：
-根据远程图片创建轮播视图:
-123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/20121003">
+根据远程图片创建轮播视图: 
+
+123456789101112NSArray *imageUrlArray = @[@&amp;quot;http://pic24.nipic.com/201210">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1498160-60a1bee338b431a8.gif?imageMogr2/auto-orient/strip">
 
 
@@ -317,11 +320,11 @@
 <li>定时器每秒钟调用一次来实现自动滚动。</li>
 </ul>
 <h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><ul>
-<li><p>根据远程图片创建轮播视图:</p>
+<li>根据远程图片创建轮播视图: </li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NSArray *imageUrlArray = @[@&quot;http://pic24.nipic.com/20121003/10754047_140022530392_2.jpg&quot;, @&quot;http://img15.3lian.com/2015/a1/13/d/17.jpg&quot;, @&quot;http://pic36.nipic.com/20131022/7786988_135813187182_2.jpg&quot;];</div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] initWithImageUrlArray:imageUrlArray placeHolder:@&quot;loadingImage&quot; imageOnClickCallBack:^(int imageIndex)&#123;</div><div class="line">    NSLog(@&quot;--&gt;&gt; RemoteImageIndex:%d&quot;, imageIndex);</div><div class="line">&#125;];</div><div class="line">[self.view addSubview:view];</div><div class="line"></div><div class="line">__weak typeof(self) weakSelf = self;</div><div class="line">[view makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.left.right.equalTo(weakSelf.view);</div><div class="line">    make.top.equalTo(weakSelf.remoteLabel.bottom).offset(5);</div><div class="line">    make.height.equalTo(@(150));</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-</li>
-<li><p>根据本地图片创建轮播视图:</p>
-</li>
+<ul>
+<li>根据本地图片创建轮播视图:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NSArray *imageNameArray = @[@&quot;0001_meitu&quot;, @&quot;0002_meitu&quot;, @&quot;0003_meitu&quot;];</div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] initWithImageNameArray:imageNameArray imageOnClickCallBack:^(int imageIndex)&#123;</div><div class="line">    NSLog(@&quot;--&gt;&gt; LocalImageIndex:%d&quot;, imageIndex);</div><div class="line">&#125;];</div><div class="line">[self.view addSubview:view];</div><div class="line"></div><div class="line">__weak typeof(self) weakSelf = self;</div><div class="line">[view makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.left.right.equalTo(weakSelf.view);</div><div class="line">    make.top.equalTo(weakSelf.localLabel.bottom).offset(5);</div><div class="line">    make.height.equalTo(@(150));</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
 <h5 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h5><ul>
