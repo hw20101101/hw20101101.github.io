@@ -284,9 +284,15 @@
       
         
           
-          &#x6548;&#x679C;&#xFF1A;
-&#x601D;&#x8DEF;&#xFF1A;
-&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;UIScrollView&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x56FE;
+          效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+
+12345NSArray *imageUrlArray =
           ...
 
           <div class="post-more-link text-center">
