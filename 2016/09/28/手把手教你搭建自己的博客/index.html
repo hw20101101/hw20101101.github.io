@@ -1,0 +1,729 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="搭建个人博客主要分为以下几步： 
+
+购买域名
+修改DNS
+创建Github仓库
+安装Hexo 
+
+
+购买域名
+以万网域名为例，打开https://wanwang.aliyun.com/查询你想注册的域名，选好域名之后注册账号去购买。
+
+修改DNS
+打开https://www.dnspod.cn/注册一个dnspod账号。
+点击域名解析，再点击添加域名，如图：
+
+
+
+连续点击3次添加记录，如图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你搭建自己的博客">
+<meta property="og:url" content="hwacdx.com/2016/09/28/手把手教你搭建自己的博客/index.html">
+<meta property="og:site_name" content="明镜亦非台的博客">
+<meta property="og:description" content="搭建个人博客主要分为以下几步： 
+
+购买域名
+修改DNS
+创建Github仓库
+安装Hexo 
+
+
+购买域名
+以万网域名为例，打开https://wanwang.aliyun.com/查询你想注册的域名，选好域名之后注册账号去购买。
+
+修改DNS
+打开https://www.dnspod.cn/注册一个dnspod账号。
+点击域名解析，再点击添加域名，如图：
+
+
+
+连续点击3次添加记录，如图：">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-5df22df1a3cc680c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-a9231be0112da725.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-49136fc1bebe14c9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-c2a4fe5c09e581fc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-e31dca3e1caa4831.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-3a0442f4b1df27ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-6da154adbd1fe6a8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-4ff13bb832620dfe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-90bff7b0be5c4edd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-2e783dcbb9f354e2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-16432a46c129982c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-7ec18f23e3b2b61f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1498160-65a0e0c03c8ee83c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-08T08:31:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手把手教你搭建自己的博客">
+<meta name="twitter:description" content="搭建个人博客主要分为以下几步： 
+
+购买域名
+修改DNS
+创建Github仓库
+安装Hexo 
+
+
+购买域名
+以万网域名为例，打开https://wanwang.aliyun.com/查询你想注册的域名，选好域名之后注册账号去购买。
+
+修改DNS
+打开https://www.dnspod.cn/注册一个dnspod账号。
+点击域名解析，再点击添加域名，如图：
+
+
+
+连续点击3次添加记录，如图：">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1498160-5df22df1a3cc680c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 手把手教你搭建自己的博客 | 明镜亦非台的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">明镜亦非台的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">奇闻说今古，谈笑有鸿儒</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                手把手教你搭建自己的博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-28T13:23:02+08:00" content="2016-09-28">
+              2016-09-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/28/手把手教你搭建自己的博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/手把手教你搭建自己的博客/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>搭建个人博客主要分为以下几步： </p>
+<ol>
+<li>购买域名</li>
+<li>修改DNS</li>
+<li>创建Github仓库</li>
+<li>安装Hexo </li>
+</ol>
+</blockquote>
+<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><ul>
+<li>以万网域名为例，打开<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">https://wanwang.aliyun.com/</a>查询你想注册的域名，选好域名之后注册账号去购买。</li>
+</ul>
+<h3 id="修改DNS"><a href="#修改DNS" class="headerlink" title="修改DNS"></a>修改DNS</h3><ul>
+<li>打开<a href="https://www.dnspod.cn/" target="_blank" rel="external">https://www.dnspod.cn/</a>注册一个dnspod账号。</li>
+<li>点击域名解析，再点击添加域名，如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-5df22df1a3cc680c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图001.jpg"></p>
+<ul>
+<li>连续点击3次添加记录，如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-a9231be0112da725.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图002.jpg"></p>
+<p> 然后填写你添加的记录，如图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-49136fc1bebe14c9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图003.jpg"></p>
+<blockquote>
+<p>注：</p>
+<ul>
+<li>A类型的两条记录指向的IP地址是github Pages的提供的IP</li>
+<li>CNAME类型的记录是后面将要创建的github仓库的名称</li>
+</ul>
+</blockquote>
+<ul>
+<li>打开万网的管理控制台，点击域名，如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-c2a4fe5c09e581fc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图004.jpg"></p>
+<ul>
+<li>点击修改DNS，如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-e31dca3e1caa4831.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图005.jpg"></p>
+<ul>
+<li>把DNS修改为f1g1ns1.dnspod.net和f1g1ns2.dnspod.net，如图</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-3a0442f4b1df27ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图006.jpg"></p>
+<blockquote>
+<p> 注：如果你的解析设置界面有数据的话，需要手动删除，否则DNS可能无法生效，示例：</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-6da154adbd1fe6a8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图007.jpg"></p>
+<h3 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h3><ul>
+<li>如果已有github账号，并且已经配置好SSH Key，登录之后创建github仓库，操作如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-4ff13bb832620dfe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图008.jpg"></p>
+<blockquote>
+<p>注：Github Pages的Repository名字是特定的，比如我Github账号是test2016，那么我Github Pages Repository名字就是test2016.github.io。</p>
+</blockquote>
+<ul>
+<li>如果没有github账号，访问<a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a>注册，登录之后配置SSH Key，操作如图：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-90bff7b0be5c4edd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图009.jpg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-2e783dcbb9f354e2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图010.jpg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-16432a46c129982c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图011.jpg"></p>
+<p>根据你自己的系统来选择配置：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-7ec18f23e3b2b61f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图012.jpg"></p>
+<p>照着步骤操作即可。<br>然后跟上面的已有github账号一样，创建一个github仓库。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
+<li>参考hexo文档<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
+<li>配置blog根目录下的_config.yml :</li>
+</ul>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">url:</span> test2016.com <span class="meta">#填写你自己购买的域名</span></div></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/test2016/test2016.github.io.git #填写你刚刚创建的github仓库的地址</span></div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">branch</span>: master</div><div class="line">  <span class="attribute">user</span>: test2016<span class="variable">@gmail</span>.com #填写你自己的github账号</div><div class="line">  <span class="attribute">pass</span>: <span class="number">123456</span>abc #填写你自己的github登录密码</div></pre></td></tr></table></figure>
+<p>在blog根目录下的source文件夹中创建CNAME文件:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1498160-65a0e0c03c8ee83c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图013.jpg"></p>
+<p>然后用文本编辑器打开CNAME文件，填写你自己购买的域名即可：test2016.com<br>个人博客的头像也推荐放在这个文件夹下。</p>
+<blockquote>
+<p>到此就大功告成了。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/28/test2016/" rel="prev" title="test2016">
+                test2016 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/28/手把手教你搭建自己的博客/"
+           data-title="手把手教你搭建自己的博客" data-url="hwacdx.com/2016/09/28/手把手教你搭建自己的博客/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="明镜亦非台" />
+          <p class="site-author-name" itemprop="name">明镜亦非台</p>
+          <p class="site-description motion-element" itemprop="description">90后iOS开发，现居广州</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名"><span class="nav-number">1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS"><span class="nav-number">2.</span> <span class="nav-text">修改DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Github仓库"><span class="nav-number">3.</span> <span class="nav-text">创建Github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">4.</span> <span class="nav-text">安装Hexo</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明镜亦非台</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hwacdx"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
