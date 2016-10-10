@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/002.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001.png">
-<meta property="og:updated_time" content="2016-10-10T08:09:55.000Z">
+<meta property="og:updated_time" content="2016-10-10T08:12:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
 <meta name="twitter:description" content="前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
@@ -291,7 +291,8 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s<span class="selector-class">.public_header_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div><div class="line">s<span class="selector-class">.source_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div></pre></td></tr></table></figure>
 <p>而这个AFNetworking.h是专门用来定义自己的宏以及导入其他类的头文件的，文件内容如图:</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/003.png" alt="003"></p>
-<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件内容如图：<br><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
+<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件内容如图：</p>
+<p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
 <p>文件路径如图：</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/001.png" alt="001"></p>
 <p>然后把HeaderFiles.h配置到podspec文件中，当我再次执行下面这个命令时：</p>
