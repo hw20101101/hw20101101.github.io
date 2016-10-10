@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/002.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001.png">
-<meta property="og:updated_time" content="2016-10-10T07:55:32.000Z">
+<meta property="og:updated_time" content="2016-10-10T07:58:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
 <meta name="twitter:description" content="网上有很多上传开源项目到cocoapods的教程，但是对依赖的第三方框架的配置说得都不够详细，cocoapods官网也是如此。
@@ -296,11 +296,11 @@
 <p>前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：</p>
 </blockquote>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pod spec lint HWAutoScrollView.podspec</div><div class="line"></div><div class="line">-&gt; HWAutoScrollView (<span class="number">0.1</span><span class="number">.2</span>)</div><div class="line">   - ERROR | [iOS] <span class="string">xcodebuild:</span> Returned an unsuccessful exit code. You can use `--verbose` <span class="keyword">for</span> more information.</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">40</span>: <span class="string">error:</span> expected <span class="string">')'</span></div><div class="line">   - NOTE  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">39</span>: <span class="string">note:</span> to match <span class="keyword">this</span> <span class="string">'('</span></div><div class="line">   - WARN  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">38</span>: <span class="string">warning:</span> type specifier missing, defaults to <span class="string">'int'</span> [-Wimplicit-<span class="keyword">int</span>]</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">92</span>:<span class="number">13</span>: <span class="string">error:</span> use of undeclared identifier <span class="string">'make'</span></div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">22</span>: <span class="string">error:</span> no visible <span class="meta">@interface</span> <span class="keyword">for</span> <span class="string">'UIScrollView'</span> declares the selector <span class="string">'makeConstraints:'</span></div></pre></td></tr></table></figure>
-<p>直到我昨天在github上逛AFNetworking时，<br>发现AFNetworking的podspec文件配置了s.public_header_files和s.source_files：</p>
+<p>直到我昨天在github上逛AFNetworking时，发现AFNetworking的podspec文件配置了s.public_header_files和s.source_files：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s<span class="selector-class">.public_header_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div><div class="line">s<span class="selector-class">.source_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div></pre></td></tr></table></figure>
-<p>而这个AFNetworking.h是专门用来定义自己的宏以及导入其他类的头文件的:</p>
+<p>而这个AFNetworking.h是专门用来定义自己的宏以及导入其他类的头文件的，文件内容如图:</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/003.png" alt="003"></p>
-<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件如图：<br><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
+<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件内容如图：<br><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
 <p>文件路径如图：</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/001.png" alt="001"></p>
 <p>然后把HeaderFiles.h配置到podspec文件中，当我再次执行下面这个命令时：</p>
