@@ -84,23 +84,42 @@
 
 
 
-<meta name="description" content="前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit cod">
+<meta name="description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+
+12345NSArray *imageUrlArray = @[@&quot;http://pic24.nipic.com/20121003/10754047_1400">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
-<meta property="og:url" content="hwacdx.com/2016/10/09/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/index.html">
+<meta property="og:title" content="封装广告轮播视图工具类">
+<meta property="og:url" content="hwacdx.com/2016/07/10/封装广告轮播视图工具类/index.html">
 <meta property="og:site_name" content="明镜亦非台的博客">
-<meta property="og:description" content="前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit cod">
-<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
-<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/002.png">
-<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001.png">
-<meta property="og:updated_time" content="2016-10-10T08:12:40.000Z">
+<meta property="og:description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+
+12345NSArray *imageUrlArray = @[@&quot;http://pic24.nipic.com/20121003/10754047_1400">
+<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif">
+<meta property="og:updated_time" content="2016-10-12T04:56:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
-<meta name="twitter:description" content="前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit cod">
-<meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
+<meta name="twitter:title" content="封装广告轮播视图工具类">
+<meta name="twitter:description" content="效果：
+思路：
+先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
+定时器每秒钟调用一次来实现自动滚动。
+
+用法：
+根据远程图片创建轮播视图:
+
+12345NSArray *imageUrlArray = @[@&quot;http://pic24.nipic.com/20121003/10754047_1400">
+<meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif">
 
 
 
@@ -118,7 +137,7 @@
   };
 </script>
 
-  <title> 如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题 | 明镜亦非台的博客 </title>
+  <title> 封装广告轮播视图工具类 | 明镜亦非台的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +257,7 @@
             
             
               
-                如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题
+                封装广告轮播视图工具类
               
             
           </h1>
@@ -250,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-09T21:23:17+08:00" content="2016-10-09">
-              2016-10-09
+            <time itemprop="dateCreated" datetime="2016-07-10T20:10:17+08:00" content="2016-07-10">
+              2016-07-10
             </time>
           </span>
 
@@ -261,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/09/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/" itemprop="commentsCount"></span>
+                <a href="/2016/07/10/封装广告轮播视图工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/10/封装广告轮播视图工具类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -285,21 +304,25 @@
       
 
       
-        <p>前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pod spec lint HWAutoScrollView.podspec</div><div class="line"></div><div class="line">-&gt; HWAutoScrollView (<span class="number">0.1</span><span class="number">.2</span>)</div><div class="line">   - ERROR | [iOS] <span class="string">xcodebuild:</span> Returned an unsuccessful exit code. You can use `--verbose` <span class="keyword">for</span> more information.</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">40</span>: <span class="string">error:</span> expected <span class="string">')'</span></div><div class="line">   - NOTE  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">39</span>: <span class="string">note:</span> to match <span class="keyword">this</span> <span class="string">'('</span></div><div class="line">   - WARN  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">38</span>: <span class="string">warning:</span> type specifier missing, defaults to <span class="string">'int'</span> [-Wimplicit-<span class="keyword">int</span>]</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">92</span>:<span class="number">13</span>: <span class="string">error:</span> use of undeclared identifier <span class="string">'make'</span></div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">22</span>: <span class="string">error:</span> no visible <span class="meta">@interface</span> <span class="keyword">for</span> <span class="string">'UIScrollView'</span> declares the selector <span class="string">'makeConstraints:'</span></div></pre></td></tr></table></figure>
-<p>直到我昨天在github上逛AFNetworking时，发现AFNetworking的podspec文件配置了s.public_header_files和s.source_files：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s<span class="selector-class">.public_header_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div><div class="line">s<span class="selector-class">.source_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div></pre></td></tr></table></figure>
-<p>而这个AFNetworking.h是专门用来定义自己的宏以及导入其他类的头文件的，文件内容如图:</p>
-<p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/003.png" alt="003"></p>
-<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件内容如图：</p>
-<p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
-<p>文件路径如图：</p>
-<p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/001.png" alt="001"></p>
-<p>然后把HeaderFiles.h配置到podspec文件中，当我再次执行下面这个命令时：</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod <span class="keyword">spec</span> lint HWAutoScrollView.podspec</div></pre></td></tr></table></figure>
-<p>居然通过验证了，苦于已久的问题终于被解决了😄😄😄。</p>
+        <h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif" alt="0930_1.gif"></p>
+<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
+<li>先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。</li>
+<li>定时器每秒钟调用一次来实现自动滚动。</li>
+</ul>
+<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><ul>
+<li>根据远程图片创建轮播视图:</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NSArray *imageUrlArray = @[@<span class="string">"http://pic24.nipic.com/20121003/10754047_140022530392_2.jpg"</span>, @<span class="string">"http://img15.3lian.com/2015/a1/13/d/17.jpg"</span>, @<span class="string">"http://pic36.nipic.com/20131022/7786988_135813187182_2.jpg"</span>];</div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] <span class="string">initWithImageUrlArray:</span>imageUrlArray <span class="string">placeHolder:</span>@<span class="string">"loadingImage"</span> <span class="string">imageOnClickCallBack:</span>^(<span class="keyword">int</span> imageIndex)&#123;</div><div class="line">    NSLog(@<span class="string">"--&gt;&gt; RemoteImageIndex:%d"</span>, imageIndex);</div><div class="line">&#125;];</div><div class="line">[self.view <span class="string">addSubview:</span>view];</div></pre></td></tr></table></figure>
+<ul>
+<li>根据本地图片创建轮播视图:</li>
+</ul>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NSArray *imageNameArray = @[@<span class="string">"0001_meitu"</span>, @<span class="string">"0002_meitu"</span>, @<span class="string">"0003_meitu"</span>]<span class="comment">;</span></div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] initWithImageNameArray:imageNameArray imageOnClickCallBack:^(int imageIndex)&#123;</div><div class="line">    NSLog(@<span class="string">"--&gt;&gt; LocalImageIndex:%d"</span>, imageIndex)<span class="comment">;</span></div><div class="line">&#125;]<span class="comment">;</span></div><div class="line">[self.view <span class="keyword">addSubview:view];</span></div><div class="line"></div><div class="line">__weak typeof(self) weakSelf = self<span class="comment">;</span></div><div class="line">[view makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.left.right.equalTo(weakSelf.view)<span class="comment">;</span></div><div class="line">    make.top.equalTo(weakSelf.localLabel.<span class="keyword">bottom).offset(5);</span></div><div class="line">    make.height.equalTo(@(<span class="number">150</span>))<span class="comment">;</span></div><div class="line">&#125;]<span class="comment">;</span></div></pre></td></tr></table></figure>
+<h5 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h5><ul>
+<li>下载此Demo之后，拖动HWAutoScrollView文件夹到项目中，导入HWAutoScrollView.h</li>
+<li>此工具类依赖Masonry，使用前请确保已导入或安装Masonry。</li>
+</ul>
 <blockquote>
-<p>网上有很多上传开源项目到cocoapods的教程，但是对依赖的第三方框架的配置说得都不够详细，cocoapods官网也是如此。希望这篇文章对大家有用。</p>
+<p>Demo链接：<a href="https://github.com/hw20101101/HWAutoScrollViewDemo" target="_blank" rel="external">https://github.com/hw20101101/HWAutoScrollViewDemo</a></p>
 </blockquote>
 
       
@@ -325,13 +348,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/30/封装广告轮播视图工具类/" rel="next" title="封装广告轮播视图工具类">
-                <i class="fa fa-chevron-left"></i> 封装广告轮播视图工具类
+              <a href="/2016/06/29/封装类似iPad中的UIPopoverController工具类/" rel="next" title="封装类似iPad中的UIPopoverController工具类">
+                <i class="fa fa-chevron-left"></i> 封装类似iPad中的UIPopoverController工具类
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/" rel="prev" title="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
+                如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -357,8 +384,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/09/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/"
-           data-title="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题" data-url="hwacdx.com/2016/10/09/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/">
+      <div class="ds-thread" data-thread-key="2016/07/10/封装广告轮播视图工具类/"
+           data-title="封装广告轮播视图工具类" data-url="hwacdx.com/2016/07/10/封装广告轮播视图工具类/">
       </div>
     
   </div>
@@ -435,7 +462,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果："><span class="nav-number">1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路："><span class="nav-number">2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法："><span class="nav-number">3.</span> <span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装："><span class="nav-number">4.</span> <span class="nav-text">安装：</span></a></li></ol></div>
             
           </div>
         </section>
