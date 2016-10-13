@@ -86,43 +86,31 @@
 
 <meta name="description" content="效果
 思路
-先创建一个 UIScrollView，然后根据图片的数量来设置 UIScrollView 的 contentSize，通过 block 来回调图片的点击事件
-定时器每秒钟调用一次来实现自动滚动
+整个界面分两部分 ( 导航栏除外 ) : 顶部的标签条，以及占据整个屏幕大半的 UICollectionView 
+每个 UICollectionViewCell 的 size 跟 UICollectionView 相同，且其中都有一个 UITableView
 
-如果广告界面比较多，要实现界面重复利用的话，可以用 UICollectionView 替换 UIScrollView，不过这样适配横竖屏切换会麻烦一点
-
-
-用法
-根据远程图片创建轮播视图:">
+如此便可实现 UICollectionView 左右滑动，UICollectionViewCell 中的 UITableVi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="封装广告轮播视图工具类">
-<meta property="og:url" content="hwacdx.com/2016/07/10/封装广告轮播视图工具类/index.html">
+<meta property="og:title" content="UICollectionView和UITableView的结合使用">
+<meta property="og:url" content="hwacdx.com/2016/09/10/UICollectionView和UITableView的结合使用/index.html">
 <meta property="og:site_name" content="明镜亦非台的博客">
 <meta property="og:description" content="效果
 思路
-先创建一个 UIScrollView，然后根据图片的数量来设置 UIScrollView 的 contentSize，通过 block 来回调图片的点击事件
-定时器每秒钟调用一次来实现自动滚动
+整个界面分两部分 ( 导航栏除外 ) : 顶部的标签条，以及占据整个屏幕大半的 UICollectionView 
+每个 UICollectionViewCell 的 size 跟 UICollectionView 相同，且其中都有一个 UITableView
 
-如果广告界面比较多，要实现界面重复利用的话，可以用 UICollectionView 替换 UIScrollView，不过这样适配横竖屏切换会麻烦一点
-
-
-用法
-根据远程图片创建轮播视图:">
-<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif">
-<meta property="og:updated_time" content="2016-10-13T09:33:19.000Z">
+如此便可实现 UICollectionView 左右滑动，UICollectionViewCell 中的 UITableVi">
+<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001_2.gif">
+<meta property="og:updated_time" content="2016-10-13T09:39:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="封装广告轮播视图工具类">
+<meta name="twitter:title" content="UICollectionView和UITableView的结合使用">
 <meta name="twitter:description" content="效果
 思路
-先创建一个 UIScrollView，然后根据图片的数量来设置 UIScrollView 的 contentSize，通过 block 来回调图片的点击事件
-定时器每秒钟调用一次来实现自动滚动
+整个界面分两部分 ( 导航栏除外 ) : 顶部的标签条，以及占据整个屏幕大半的 UICollectionView 
+每个 UICollectionViewCell 的 size 跟 UICollectionView 相同，且其中都有一个 UITableView
 
-如果广告界面比较多，要实现界面重复利用的话，可以用 UICollectionView 替换 UIScrollView，不过这样适配横竖屏切换会麻烦一点
-
-
-用法
-根据远程图片创建轮播视图:">
-<meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif">
+如此便可实现 UICollectionView 左右滑动，UICollectionViewCell 中的 UITableVi">
+<meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001_2.gif">
 
 
 
@@ -140,7 +128,7 @@
   };
 </script>
 
-  <title> 封装广告轮播视图工具类 | 明镜亦非台的博客 </title>
+  <title> UICollectionView和UITableView的结合使用 | 明镜亦非台的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +248,7 @@
             
             
               
-                封装广告轮播视图工具类
+                UICollectionView和UITableView的结合使用
               
             
           </h1>
@@ -272,8 +260,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-10T20:10:17+08:00" content="2016-07-10">
-              2016-07-10
+            <time itemprop="dateCreated" datetime="2016-09-10T15:51:35+08:00" content="2016-09-10">
+              2016-09-10
             </time>
           </span>
 
@@ -283,8 +271,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/10/封装广告轮播视图工具类/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/10/封装广告轮播视图工具类/" itemprop="commentsCount"></span>
+                <a href="/2016/09/10/UICollectionView和UITableView的结合使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/UICollectionView和UITableView的结合使用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,28 +295,31 @@
       
 
       
-        <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/0926_1.gif" alt="0930_1.gif"></p>
+        <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/001_2.gif" alt="001"></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>先创建一个 UIScrollView，然后根据图片的数量来设置 UIScrollView 的 contentSize，通过 block 来回调图片的点击事件</li>
-<li><p>定时器每秒钟调用一次来实现自动滚动</p>
-</li>
-<li><p>如果广告界面比较多，要实现界面重复利用的话，可以用 UICollectionView 替换 UIScrollView，不过这样适配横竖屏切换会麻烦一点</p>
-</li>
+<li>整个界面分两部分 ( 导航栏除外 ) : 顶部的标签条，以及占据整个屏幕大半的 UICollectionView </li>
+<li>每个 UICollectionViewCell 的 size 跟 UICollectionView 相同，且其中都有一个 UITableView</li>
 </ul>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ul>
-<li>根据远程图片创建轮播视图:</li>
+<p>如此便可实现 UICollectionView 左右滑动，UICollectionViewCell 中的 UITableView 上下滑动。</p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><ul>
+<li>如果当前的 ViewController 使用了 UINavigationController 之，后会导致 UIScollView 下移64px，</li>
 </ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NSArray *imageUrlArray = @[@<span class="string">"http://pic24.nipic.com/20121003/10754047_140022530392_2.jpg"</span>, @<span class="string">"http://img15.3lian.com/2015/a1/13/d/17.jpg"</span>, @<span class="string">"http://pic36.nipic.com/20131022/7786988_135813187182_2.jpg"</span>];</div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] <span class="string">initWithImageUrlArray:</span>imageUrlArray <span class="string">placeHolder:</span>@<span class="string">"loadingImage"</span> <span class="string">imageOnClickCallBack:</span>^(<span class="keyword">int</span> imageIndex)&#123;</div><div class="line">    NSLog(@<span class="string">"--&gt;&gt; RemoteImageIndex:%d"</span>, imageIndex);</div><div class="line">&#125;];</div><div class="line">[self.view <span class="string">addSubview:</span>view];</div></pre></td></tr></table></figure>
+<h5 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h5><p>在当前的 ViewController 的viewDidLoad 方法中调用 </p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.automaticallyAdjustsScrollViewInsets = <span class="literal">NO</span>;</div></pre></td></tr></table></figure>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><ul>
+<li>虽然 UICollectionView 可以使用 Masonry 来自动布局，但是其 itemSize 必须指定一个固定的大小，这就导致横竖屏切换的时候 UICollectionViewCell 不会随着屏幕宽高的改变而改变，</li>
+</ul>
+<h5 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h5><ul>
+<li>定义两个成员变量记录 UICollectionViewCell 的宽高</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setCellWidthHeight</div><div class="line">&#123;</div><div class="line">    self.cellWidth = [UIScreen mainScreen].bounds.<span class="built_in">size</span>.<span class="built_in">width</span>;</div><div class="line">    self.cellHeight = [UIScreen mainScreen].bounds.<span class="built_in">size</span>.<span class="built_in">height</span> - kCollectionViewY;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>根据本地图片创建轮播视图:</li>
+<li>在系统的屏幕旋转方法中重新赋值 UICollectionViewCell 的宽高，然后刷新 UICollectionView</li>
 </ul>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NSArray *imageNameArray = @[@<span class="string">"0001_meitu"</span>, @<span class="string">"0002_meitu"</span>, @<span class="string">"0003_meitu"</span>]<span class="comment">;</span></div><div class="line">HWAutoScrollView *view = [[HWAutoScrollView alloc] initWithImageNameArray:imageNameArray imageOnClickCallBack:^(int imageIndex)&#123;</div><div class="line">    NSLog(@<span class="string">"--&gt;&gt; LocalImageIndex:%d"</span>, imageIndex)<span class="comment">;</span></div><div class="line">&#125;]<span class="comment">;</span></div><div class="line">[self.view <span class="keyword">addSubview:view];</span></div><div class="line"></div><div class="line">__weak typeof(self) weakSelf = self<span class="comment">;</span></div><div class="line">[view makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.left.right.equalTo(weakSelf.view)<span class="comment">;</span></div><div class="line">    make.top.equalTo(weakSelf.localLabel.<span class="keyword">bottom).offset(5);</span></div><div class="line">    make.height.equalTo(@(<span class="number">150</span>))<span class="comment">;</span></div><div class="line">&#125;]<span class="comment">;</span></div></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>下载此 Demo 之后，拖动 HWAutoScrollView 文件夹到项目中，导入 HWAutoScrollView.h</li>
-<li>此工具类依赖 Masonry，使用前请确保已导入或安装 Masonry</li>
-</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">willAnimateRotationToInterfaceOrientation:</span>(UIInterfaceOrientation)toInterfaceOrientation <span class="string">duration:</span>(NSTimeInterval)duration</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> <span class="string">willAnimateRotationToInterfaceOrientation:</span>toInterfaceOrientation <span class="string">duration:</span>duration];</div><div class="line">    [self setCellWidthHeight];</div><div class="line">    [self.collectionView reloadData];</div><div class="line">    [self.collectionView <span class="string">scrollToItemAtIndexPath:</span>[NSIndexPath <span class="string">indexPathForRow:</span><span class="number">0</span> <span class="string">inSection:</span><span class="number">0</span>] <span class="string">atScrollPosition:</span>UICollectionViewScrollPositionNone <span class="string">animated:</span>NO];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>Demo 链接：<a href="https://github.com/hw20101101/HWAutoScrollViewDemo" target="_blank" rel="external">https://github.com/hw20101101/HWAutoScrollViewDemo</a></p>
+<p>Demo 链接：<a href="https://github.com/hw20101101/CollectionViewTableViewDemo" target="_blank" rel="external">https://github.com/hw20101101/CollectionViewTableViewDemo</a></p>
+<p>如有不足，欢迎指正！</p>
 </blockquote>
 
       
@@ -354,17 +345,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/29/封装类似iPad中的UIPopoverController工具类/" rel="next" title="封装类似 iPad 中的 UIPopoverController 工具类">
-                <i class="fa fa-chevron-left"></i> 封装类似 iPad 中的 UIPopoverController 工具类
+              <a href="/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/" rel="next" title="如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题">
+                <i class="fa fa-chevron-left"></i> 如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/" rel="prev" title="如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题">
-                如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -390,8 +377,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/10/封装广告轮播视图工具类/"
-           data-title="封装广告轮播视图工具类" data-url="hwacdx.com/2016/07/10/封装广告轮播视图工具类/">
+      <div class="ds-thread" data-thread-key="2016/09/10/UICollectionView和UITableView的结合使用/"
+           data-title="UICollectionView和UITableView的结合使用" data-url="hwacdx.com/2016/09/10/UICollectionView和UITableView的结合使用/">
       </div>
     
   </div>
@@ -468,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">3.</span> <span class="nav-text">问题一</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">3.0.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">4.</span> <span class="nav-text">问题二</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

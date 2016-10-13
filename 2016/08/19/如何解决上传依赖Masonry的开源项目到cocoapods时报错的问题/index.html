@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="问题前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit c">
+<meta name="description" content="问题前段时间我上传自己的开源项目到 Cocoapods 的时候，由于依赖了 Masonry，当我执行下面的命令的时候一直报错：
+123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
+<meta property="og:title" content="如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题">
 <meta property="og:url" content="hwacdx.com/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/index.html">
 <meta property="og:site_name" content="明镜亦非台的博客">
-<meta property="og:description" content="问题前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit c">
+<meta property="og:description" content="问题前段时间我上传自己的开源项目到 Cocoapods 的时候，由于依赖了 Masonry，当我执行下面的命令的时候一直报错：
+123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exi">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/002.png">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/001.png">
-<meta property="og:updated_time" content="2016-10-12T05:13:36.000Z">
+<meta property="og:updated_time" content="2016-10-13T08:08:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题">
-<meta name="twitter:description" content="问题前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exit c">
+<meta name="twitter:title" content="如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题">
+<meta name="twitter:description" content="问题前段时间我上传自己的开源项目到 Cocoapods 的时候，由于依赖了 Masonry，当我执行下面的命令的时候一直报错：
+123456789pod spec lint HWAutoScrollView.podspec-&amp;gt; HWAutoScrollView (0.1.2)   - ERROR | [iOS] xcodebuild: Returned an unsuccessful exi">
 <meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/003.png">
 
 
@@ -118,7 +118,7 @@
   };
 </script>
 
-  <title> 如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题 | 明镜亦非台的博客 </title>
+  <title> 如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题 | 明镜亦非台的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题
+                如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题
               
             
           </h1>
@@ -285,23 +285,23 @@
       
 
       
-        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：</p>
+        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>前段时间我上传自己的开源项目到 Cocoapods 的时候，由于依赖了 Masonry，当我执行下面的命令的时候一直报错：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pod spec lint HWAutoScrollView.podspec</div><div class="line"></div><div class="line">-&gt; HWAutoScrollView (<span class="number">0.1</span><span class="number">.2</span>)</div><div class="line">   - ERROR | [iOS] <span class="string">xcodebuild:</span> Returned an unsuccessful exit code. You can use `--verbose` <span class="keyword">for</span> more information.</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">40</span>: <span class="string">error:</span> expected <span class="string">')'</span></div><div class="line">   - NOTE  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">39</span>: <span class="string">note:</span> to match <span class="keyword">this</span> <span class="string">'('</span></div><div class="line">   - WARN  | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">38</span>: <span class="string">warning:</span> type specifier missing, defaults to <span class="string">'int'</span> [-Wimplicit-<span class="keyword">int</span>]</div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">92</span>:<span class="number">13</span>: <span class="string">error:</span> use of undeclared identifier <span class="string">'make'</span></div><div class="line">   - ERROR | <span class="string">xcodebuild:</span>  HWAutoScrollView<span class="regexp">/HWAutoScrollView/</span>HWAutoScrollView.<span class="string">m:</span><span class="number">91</span>:<span class="number">22</span>: <span class="string">error:</span> no visible <span class="meta">@interface</span> <span class="keyword">for</span> <span class="string">'UIScrollView'</span> declares the selector <span class="string">'makeConstraints:'</span></div></pre></td></tr></table></figure>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>直到我昨天在github上逛AFNetworking时，发现AFNetworking的podspec文件配置了s.public_header_files和s.source_files：</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>直到我昨天在 Github 上看 AFNetworking 项目时，发现 AFNetworking 的 podspec 文件配置了 s.public_header_files 和 s.source_files：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s<span class="selector-class">.public_header_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div><div class="line">s<span class="selector-class">.source_files</span> = <span class="string">'AFNetworking/AFNetworking.h'</span></div></pre></td></tr></table></figure>
-<p>而这个AFNetworking.h是专门用来定义自己的宏以及导入其他类的头文件的，文件内容如图:</p>
+<p>而这个 AFNetworking.h 是专门用来定义自己的宏以及导入其他类的头文件的，文件内容如图:</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/003.png" alt="003"></p>
-<p>于是我在自己的开源项目中也创建了一个HeaderFiles.h，文件内容如图：</p>
+<p>于是我在自己的开源项目中也创建了一个 HeaderFiles.h，文件内容如图：</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/002.png" alt="002"></p>
 <p>文件路径如图：</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/001.png" alt="001"></p>
-<p>然后把HeaderFiles.h配置到podspec文件中，我的podsoec文件如下:</p>
+<p>然后把 HeaderFiles.h 配置到 podspec 文件中，我的 podsoec 文件如下:</p>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Pod::Spec.new do |s|</div><div class="line"></div><div class="line">  s.<span class="attr">name</span>         = <span class="string">"HWAutoScrollView"</span></div><div class="line">  s.<span class="attr">version</span>      = <span class="string">"0.0.3"</span></div><div class="line">  s.<span class="attr">summary</span>      = <span class="string">"OC版广告轮播视图工具类"</span></div><div class="line">  s.<span class="attr">homepage</span>     = <span class="string">"https://github.com/hwtest/HWAutoScrollViewDemo"</span></div><div class="line">  s.<span class="attr">license</span>      = <span class="string">"MIT"</span></div><div class="line">  s.<span class="attr">author</span>       = &#123; <span class="string">"hwtest"</span> =&gt; <span class="string">"hwtest@gmail.com"</span> &#125;</div><div class="line">  s.<span class="attr">platform</span>     = :ios, <span class="string">"7.0"</span></div><div class="line">  s.<span class="attr">source</span>       = &#123; :<span class="attr">git</span> =&gt; <span class="string">"https://github.com/hwtest/HWAutoScrollViewDemo.git"</span>, :<span class="attr">tag</span> =&gt; <span class="string">"#&#123;s.version&#125;"</span> &#125;</div><div class="line"></div><div class="line">  s.<span class="attr">source_files</span>  = <span class="string">"HWAutoScrollView"</span>, <span class="string">"HWAutoScrollView/**/*.&#123;h,m&#125;"</span></div><div class="line">  s.<span class="attr">exclude_files</span> = <span class="string">"HWAutoScrollView/Exclude"</span></div><div class="line"></div><div class="line">  s.<span class="attr">framework</span>  = <span class="string">"UIKit"</span></div><div class="line">  s.<span class="attr">requires_arc</span> = <span class="literal">true</span></div><div class="line"></div><div class="line">  s.<span class="attr">public_header_files</span> = 'HWAutoScrollView/HeaderFiles.h'</div><div class="line">  s.<span class="attr">source_files</span> = 'HWAutoScrollView/HeaderFiles.h' </div><div class="line"></div><div class="line">  s.dependency <span class="string">"Masonry"</span></div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
 <p>当我再次执行下面这个命令时：</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod <span class="keyword">spec</span> lint HWAutoScrollView.podspec</div></pre></td></tr></table></figure>
 <p>居然通过验证了，苦于已久的问题终于被解决了😄😄😄。</p>
 <blockquote>
-<p>网上有很多上传开源项目到cocoapods的教程，但是对依赖的第三方框架的配置说得都不够详细，cocoapods官网也是如此。希望这篇文章对大家有用。</p>
+<p>网上有很多上传开源项目到 Cocoapods 的教程，但是对依赖的第三方框架的配置说得都不够详细，Cocoapods 官网也是如此。希望这篇文章对大家有用。</p>
 <p>如有不足，欢迎指正！</p>
 </blockquote>
 
@@ -336,6 +336,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/09/10/UICollectionView和UITableView的结合使用/" rel="prev" title="UICollectionView和UITableView的结合使用">
+                UICollectionView和UITableView的结合使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -361,7 +365,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/"
-           data-title="如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题" data-url="hwacdx.com/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/">
+           data-title="如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题" data-url="hwacdx.com/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/">
       </div>
     
   </div>
@@ -406,7 +410,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

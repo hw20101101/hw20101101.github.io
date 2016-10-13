@@ -84,29 +84,29 @@
 
 
 
-<meta name="description" content="效果：
-思路：
-先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
+<meta name="description" content="效果
+思路
+先创建一个透明的背景视图，再创建一个 tableView 添加到透明的背景视图上面，然后把 tableView 的 didSelectRowAtIndexPath 方法封装成一个 block 回调
 
-用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
+用法12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="封装类似iPad中的UIPopoverController工具类">
+<meta property="og:title" content="封装类似 iPad 中的 UIPopoverController 工具类">
 <meta property="og:url" content="hwacdx.com/2016/06/29/封装类似iPad中的UIPopoverController工具类/index.html">
 <meta property="og:site_name" content="明镜亦非台的博客">
-<meta property="og:description" content="效果：
-思路：
-先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
+<meta property="og:description" content="效果
+思路
+先创建一个透明的背景视图，再创建一个 tableView 添加到透明的背景视图上面，然后把 tableView 的 didSelectRowAtIndexPath 方法封装成一个 block 回调
 
-用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
+用法12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0928_1.gif">
-<meta property="og:updated_time" content="2016-10-12T04:56:22.000Z">
+<meta property="og:updated_time" content="2016-10-13T09:33:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="封装类似iPad中的UIPopoverController工具类">
-<meta name="twitter:description" content="效果：
-思路：
-先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
+<meta name="twitter:title" content="封装类似 iPad 中的 UIPopoverController 工具类">
+<meta name="twitter:description" content="效果
+思路
+先创建一个透明的背景视图，再创建一个 tableView 添加到透明的背景视图上面，然后把 tableView 的 didSelectRowAtIndexPath 方法封装成一个 block 回调
 
-用法：12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,@&quot;ri">
+用法12345NSArray *titles = @[@&quot;添加好友&quot;,@&quot;多人会话&quot;,@&quot;扫一扫&quot;];NSArray *icons = @[@&quot;right_menu_addFriend&quot;,">
 <meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/0928_1.gif">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title> 封装类似iPad中的UIPopoverController工具类 | 明镜亦非台的博客 </title>
+  <title> 封装类似 iPad 中的 UIPopoverController 工具类 | 明镜亦非台的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +245,7 @@
             
             
               
-                封装类似iPad中的UIPopoverController工具类
+                封装类似 iPad 中的 UIPopoverController 工具类
               
             
           </h1>
@@ -292,17 +292,17 @@
       
 
       
-        <h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/0928_1.gif" alt="0929_1.gif"></p>
-<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ul>
-<li>先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。</li>
+        <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/0928_1.gif" alt="0929_1.gif"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>先创建一个透明的背景视图，再创建一个 tableView 添加到透明的背景视图上面，然后把 tableView 的 didSelectRowAtIndexPath 方法封装成一个 block 回调</li>
 </ul>
-<h5 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *titles = @[<span class="string">@"添加好友"</span>,<span class="string">@"多人会话"</span>,<span class="string">@"扫一扫"</span>];</div><div class="line"><span class="built_in">NSArray</span> *icons = @[<span class="string">@"right_menu_addFriend"</span>,<span class="string">@"right_menu_multichat"</span>,<span class="string">@"right_menu_QR"</span>];</div><div class="line"><span class="keyword">self</span>.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(<span class="built_in">NSInteger</span> selectIndex) &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"--&gt;&gt; selectIndex:%ld"</span>, (<span class="keyword">long</span>)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<h5 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h5><ul>
-<li>下载此Demo之后，拖动HWPopoverView文件夹到项目中，导入HWPopoverView.h</li>
-<li>此工具类依赖Masonry，使用前请确保已安装Masonry。</li>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *titles = @[<span class="string">@"添加好友"</span>,<span class="string">@"多人会话"</span>,<span class="string">@"扫一扫"</span>];</div><div class="line"><span class="built_in">NSArray</span> *icons = @[<span class="string">@"right_menu_addFriend"</span>,<span class="string">@"right_menu_multichat"</span>,<span class="string">@"right_menu_QR"</span>];</div><div class="line"><span class="keyword">self</span>.popoverView = [[HWPopoverView alloc] initWithTitles:titles icons:icons style:HWPopoverViewStyleRightTop didSelectCallBack:^(<span class="built_in">NSInteger</span> selectIndex) &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"--&gt;&gt; selectIndex:%ld"</span>, (<span class="keyword">long</span>)selectIndex);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>下载此 Demo 之后，拖动 HWPopoverView 文件夹到项目中，导入 HWPopoverView.h</li>
+<li>此工具类依赖 Masonry，使用前请确保已安装 Masonry</li>
 </ul>
 <blockquote>
-<p>Demo链接：<a href="https://github.com/hw20101101/HWPopoverViewDemo" target="_blank" rel="external">https://github.com/hw20101101/HWPopoverViewDemo</a></p>
+<p>Demo 链接：<a href="https://github.com/hw20101101/HWPopoverViewDemo" target="_blank" rel="external">https://github.com/hw20101101/HWPopoverViewDemo</a></p>
 </blockquote>
 
       
@@ -365,7 +365,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/06/29/封装类似iPad中的UIPopoverController工具类/"
-           data-title="封装类似iPad中的UIPopoverController工具类" data-url="hwacdx.com/2016/06/29/封装类似iPad中的UIPopoverController工具类/">
+           data-title="封装类似 iPad 中的 UIPopoverController 工具类" data-url="hwacdx.com/2016/06/29/封装类似iPad中的UIPopoverController工具类/">
       </div>
     
   </div>
@@ -410,7 +410,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -442,7 +442,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果："><span class="nav-number">1.</span> <span class="nav-text">效果：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路："><span class="nav-number">2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法："><span class="nav-number">3.</span> <span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装："><span class="nav-number">4.</span> <span class="nav-text">安装：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li></ol></div>
             
           </div>
         </section>

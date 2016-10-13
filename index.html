@@ -233,8 +233,119 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/10/UICollectionView和UITableView的结合使用/" itemprop="url">
+                  UICollectionView和UITableView的结合使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-10T15:51:35+08:00" content="2016-09-10">
+              2016-09-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/10/UICollectionView和UITableView的结合使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/UICollectionView和UITableView的结合使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          效果
+思路
+整个界面分两部分 ( 导航栏除外 ) : 顶部的标签条，以及占据整个屏幕大半的 UICollectionView 
+每个 UICollectionViewCell 的 size 跟 UICollectionView 相同，且其中都有一个 UITableView
+
+如此便可实现 UICol
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/UICollectionView和UITableView的结合使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/19/如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题/" itemprop="url">
-                  如何解决上传依赖Masonry的开源项目到cocoapods时报错的问题
+                  如何解决上传依赖 Masonry 的开源项目到 Cocoapods 时报错的问题
                 </a>
               
             
@@ -284,8 +395,8 @@
       
         
           
-          问题前段时间我上传自己的开源项目到cocoapods的时候，由于依赖了Masonry，当我执行下面的命令的时候一直报错：
-123456789pod spec lint HWAutoScrollView.podspec-&gt; HWAutoScrollView (0.1.2)   - ERROR |
+          问题前段时间我上传自己的开源项目到 Cocoapods 的时候，由于依赖了 Masonry，当我执行下面的命令的时候一直报错：
+123456789pod spec lint HWAutoScrollView.podspec-&gt; HWAutoScrollView (0.1.2)   - ERRO
           ...
 
           <div class="post-more-link text-center">
@@ -391,15 +502,12 @@
       
         
           
-          效果：
-思路：
-先创建一个UIScrollView，然后根据图片的数量来设置UIScrollView的contentSize，通过block来回调图片的点击事件。
-定时器每秒钟调用一次来实现自动滚动。
+          效果
+思路
+先创建一个 UIScrollView，然后根据图片的数量来设置 UIScrollView 的 contentSize，通过 block 来回调图片的点击事件
+定时器每秒钟调用一次来实现自动滚动
 
-用法：
-根据远程图片创建轮播视图:
-
-12345NSArray *imageUrlArray =
+如果广告界面比较多，要实现界面重复利用的话，可以用 UICollectionView 替换 
           ...
 
           <div class="post-more-link text-center">
@@ -455,7 +563,7 @@
               
                 
                 <a class="post-title-link" href="/2016/06/29/封装类似iPad中的UIPopoverController工具类/" itemprop="url">
-                  封装类似iPad中的UIPopoverController工具类
+                  封装类似 iPad 中的 UIPopoverController 工具类
                 </a>
               
             
@@ -505,11 +613,11 @@
       
         
           
-          效果：
-思路：
-先创建一个透明的背景视图，再创建一个tableView添加到透明的背景视图上面，然后把tableView的didSelectRowAtIndexPath方法封装成一个block回调。
+          效果
+思路
+先创建一个透明的背景视图，再创建一个 tableView 添加到透明的背景视图上面，然后把 tableView 的 didSelectRowAtIndexPath 方法封装成一个 block 回调
 
-用法：12345NSArray *titles = @[@"添加好友",@"多人会话",@"扫一扫
+用法12345NSArray *titles = @[@"添加好友",@"多人会话",@
           ...
 
           <div class="post-more-link text-center">
@@ -703,7 +811,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -137,7 +137,7 @@
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE011.jpg">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE012.jpg">
 <meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE013.jpg">
-<meta property="og:updated_time" content="2016-10-12T04:55:45.000Z">
+<meta property="og:updated_time" content="2016-10-13T08:13:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手把手教你搭建自己的博客">
 <meta name="twitter:description" content="搭建个人博客主要分为以下几步： 
@@ -371,8 +371,8 @@
 <blockquote>
 <p>注：</p>
 <ul>
-<li>A类型的两条记录指向的IP地址是github Pages的提供的IP</li>
-<li>CNAME类型的记录是后面将要创建的github仓库的名称</li>
+<li>A类型的两条记录指向的IP地址是Github Pages的提供的IP</li>
+<li>CNAME类型的记录是后面将要创建的Github仓库的名称</li>
 </ul>
 </blockquote>
 <ul>
@@ -384,7 +384,7 @@
 </ul>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE005.jpg" alt="截图005.jpg"></p>
 <ul>
-<li>把DNS修改为f1g1ns1.dnspod.net和f1g1ns2.dnspod.net，如图</li>
+<li>把DNS修改为 f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net，如图</li>
 </ul>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE006.jpg" alt="截图006.jpg"></p>
 <blockquote>
@@ -392,32 +392,33 @@
 </blockquote>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE007.jpg" alt="截图007.jpg"></p>
 <h3 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h3><ul>
-<li>如果已有github账号，并且已经配置好SSH Key，登录之后创建github仓库，操作如图：</li>
+<li>如果已有Github账号，并且已经配置好SSH Key，登录之后创建Github仓库，操作如图：</li>
 </ul>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE008.jpg" alt="截图008.jpg"></p>
 <blockquote>
 <p>注：Github Pages的Repository名字是特定的，比如我Github账号是test2016，那么我Github Pages Repository名字就是test2016.github.io。</p>
 </blockquote>
 <ul>
-<li>如果没有github账号，访问<a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a>注册，登录之后配置SSH Key，操作如图：</li>
+<li>如果没有Github账号，访问<a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a>注册，登录之后配置SSH Key，操作如图：</li>
 </ul>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE009.jpg" alt="截图009.jpg"></p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE010.jpg" alt="截图010.jpg"></p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE011.jpg" alt="截图011.jpg"></p>
 <p>根据你自己的系统来选择配置：</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE012.jpg" alt="截图012.jpg"></p>
-<p>照着步骤操作即可。<br>然后跟上面的已有github账号一样，创建一个github仓库。</p>
+<p>照着步骤操作即可。<br>然后跟上面的已有Github账号一样，创建一个Github仓库。</p>
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
-<li>hexo的安装、建站、配置参考hexo文档<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
-<li>配置blog根目录下的_config.yml :</li>
+<li>Hexo的安装、建站、配置参考Hexo文档<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
+<li>配置Blog根目录下的_config.yml :</li>
 </ul>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">url:</span> test2016.com <span class="meta">#填写你自己购买的域名</span></div></pre></td></tr></table></figure>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/test2016/test2016.github.io.git #填写你刚刚创建的github仓库的地址</span></div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">branch</span>: master</div><div class="line">  <span class="attribute">user</span>: test2016<span class="variable">@gmail</span>.com #填写你自己的github账号</div><div class="line">  <span class="attribute">pass</span>: <span class="number">123456</span>abc #填写你自己的github登录密码</div></pre></td></tr></table></figure>
-<p>在blog根目录下的source文件夹中创建CNAME文件:</p>
+<p>在Blog根目录下的source文件夹中创建CNAME文件:</p>
 <p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE013.jpg" alt="截图013.jpg"></p>
 <p>然后用文本编辑器打开CNAME文件，填写你自己购买的域名即可：test2016.com<br>个人博客的头像也推荐放在这个文件夹下。</p>
 <blockquote>
 <p>到此就大功告成了。</p>
+<p>如有不足，欢迎指正！</p>
 </blockquote>
 
       
@@ -447,8 +448,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/29/封装类似iPad中的UIPopoverController工具类/" rel="prev" title="封装类似iPad中的UIPopoverController工具类">
-                封装类似iPad中的UIPopoverController工具类 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/29/封装类似iPad中的UIPopoverController工具类/" rel="prev" title="封装类似 iPad 中的 UIPopoverController 工具类">
+                封装类似 iPad 中的 UIPopoverController 工具类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +522,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
