@@ -284,10 +284,9 @@
       
         
           
-          什么是RunLoop ?
-从字面意思看就是运行循环, 跑圈
-其实它内部就是 do-while 循环, 在这个循环内部不断地处理各种任务(比如 Source / Timer / Observer)
-一个线程对应一个 RunLoop, 主线程的 RunLoop 默认已经启动, 子线程的 RunLoop 
+          什么是RunLoop从字面意思看就是运行循环，其实它内部就是 do-while 循环，在这个循环内部不断地处理各种任务 (比如 Source / Timer / Observer)
+
+ 一个线程对应一个 RunLoop，主线程的 RunLoop 默认已经启动，子线程的 RunLoop 需要手动启动(
           ...
 
           <div class="post-more-link text-center">
