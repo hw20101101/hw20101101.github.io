@@ -1,0 +1,639 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是RunLoop ?
+从字面意思看就是运行循环, 跑圈
+其实它内部就是 do-while 循环, 在这个循环内部不断地处理各种任务(比如 Source / Timer / Observer)
+一个线程对应一个 RunLoop, 主线程的 RunLoop 默认已经启动, 子线程的 RunLoop 需要手动启动(调用 run 方法)
+RunLoop 只能选择一个 Mode 启动, 如果当前 Mod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RunLoop学习笔记">
+<meta property="og:url" content="hwacdx.com/2016/09/15/RunLoop学习笔记/index.html">
+<meta property="og:site_name" content="明镜亦非台的博客">
+<meta property="og:description" content="什么是RunLoop ?
+从字面意思看就是运行循环, 跑圈
+其实它内部就是 do-while 循环, 在这个循环内部不断地处理各种任务(比如 Source / Timer / Observer)
+一个线程对应一个 RunLoop, 主线程的 RunLoop 默认已经启动, 子线程的 RunLoop 需要手动启动(调用 run 方法)
+RunLoop 只能选择一个 Mode 启动, 如果当前 Mod">
+<meta property="og:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/Snip20161028_1.png">
+<meta property="og:updated_time" content="2016-10-28T15:16:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RunLoop学习笔记">
+<meta name="twitter:description" content="什么是RunLoop ?
+从字面意思看就是运行循环, 跑圈
+其实它内部就是 do-while 循环, 在这个循环内部不断地处理各种任务(比如 Source / Timer / Observer)
+一个线程对应一个 RunLoop, 主线程的 RunLoop 默认已经启动, 子线程的 RunLoop 需要手动启动(调用 run 方法)
+RunLoop 只能选择一个 Mode 启动, 如果当前 Mod">
+<meta name="twitter:image" content="http://7xqvz3.com1.z0.glb.clouddn.com/Snip20161028_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> RunLoop学习笔记 | 明镜亦非台的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">明镜亦非台的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">奇闻说今古，谈笑有鸿儒</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RunLoop学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-15T20:51:35+08:00" content="2016-09-15">
+              2016-09-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/15/RunLoop学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/RunLoop学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="什么是RunLoop"><a href="#什么是RunLoop" class="headerlink" title="什么是RunLoop ?"></a>什么是RunLoop ?</h3><ul>
+<li>从字面意思看就是运行循环, 跑圈</li>
+<li>其实它内部就是 do-while 循环, 在这个循环内部不断地处理各种任务(比如 Source / Timer / Observer)</li>
+<li>一个线程对应一个 RunLoop, 主线程的 RunLoop 默认已经启动, 子线程的 RunLoop 需要手动启动(调用 run 方法)</li>
+<li>RunLoop 只能选择一个 Mode 启动, 如果当前 Mode 中没有任何 Source / Timer / Observer, 则直接退出 RunLoop</li>
+</ul>
+<h3 id="RunLoop的处理逻辑"><a href="#RunLoop的处理逻辑" class="headerlink" title="RunLoop的处理逻辑"></a>RunLoop的处理逻辑</h3><h4 id="图片版"><a href="#图片版" class="headerlink" title="图片版"></a>图片版</h4><p><img src="http://7xqvz3.com1.z0.glb.clouddn.com/Snip20161028_1.png" alt="Snip001"></p>
+<h4 id="文字版"><a href="#文字版" class="headerlink" title="文字版"></a>文字版</h4><ul>
+<li>通知 Observer， 即将进入循环</li>
+<li>进入循环之后先处理 Timer (通知 Observer，即将处理 Timer)</li>
+<li>通知 Observer，即将处理 Source0 (点击事件)  </li>
+<li>开始处理 Source0，处理完之后如果有 Source1，则直接跳到第9步处理，然后跳到第2步继续循环</li>
+<li>如果没有 Source1 则通知 Observer，线程即将休眠</li>
+<li>休眠，等待唤醒</li>
+<li>在休眠的过程中如果收到消息，则会被唤醒 (通知 Observer，线程刚被唤醒)</li>
+<li>处理唤醒时收到的消息，然后跳到第2步继续循环</li>
+<li>如果 App 被杀死或者遇到超时，则退出循环 (通知 Observer，即将退出循环)</li>
+</ul>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="NSTimer"><a href="#NSTimer" class="headerlink" title="NSTimer"></a>NSTimer</h4><ul>
+<li>使用 NSTimer 的 timerWithTimeInterval 构造定时器时，需要手动把定时器添加到 RunLoop 中，定时器才会运行:</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSTimer *timer = [NSTimer <span class="string">timerWithTimeInterval:</span><span class="number">2.0</span> <span class="string">target:</span>self <span class="string">selector:</span><span class="meta">@selector</span>(run) <span class="string">userInfo:</span>nil <span class="string">repeats:</span>YES];</div><div class="line"></div><div class="line"><span class="comment">// 定时器只运行在 NSDefaultRunLoopMode 下，一旦 RunLoop 进入其他模式，这个定时器就不会运行</span></div><div class="line">[[NSRunLoop currentRunLoop] <span class="string">addTimer:</span>timer <span class="string">forMode:</span>NSDefaultRunLoopMode];</div></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定时器只运行在 UITrackingRunLoopMode 下，一旦 RunLoop 进入其他模式，这个定时器就不会运行</span></div><div class="line"><span class="selector-attr">[[NSRunLoop currentRunLoop]</span> <span class="selector-tag">addTimer</span><span class="selector-pseudo">:timer</span> <span class="selector-tag">forMode</span><span class="selector-pseudo">:UITrackingRunLoopMode</span>];</div><div class="line">    </div><div class="line"><span class="comment">// 定时器会运行在标记为 common modes 的模式下</span></div><div class="line"><span class="comment">// 标记为 common modes 的模式: UITrackingRunLoopMode 和 NSDefaultRunLoopMode  </span></div><div class="line"><span class="selector-attr">[[NSRunLoop currentRunLoop]</span> <span class="selector-tag">addTimer</span><span class="selector-pseudo">:timer</span> <span class="selector-tag">forMode</span><span class="selector-pseudo">:NSRunLoopCommonModes</span>];</div></pre></td></tr></table></figure>
+<ul>
+<li>使用 NSTimer 的 scheduledTimerWithTimeInterval 方法来构造定时器时，timer 默认已经被添加到当前 RunLoop 中，在 NSDefaultRunLoopMode 下运行，如果要修改 timer 的运行模式，调用下面的代码即可：</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-attr">[[NSRunLoop currentRunLoop]</span> <span class="selector-tag">addTimer</span><span class="selector-pseudo">:timer</span> <span class="selector-tag">forMode</span><span class="selector-pseudo">:NSRunLoopCommonModes</span>];<span class="comment">// 把 NSRunLoopCommonModes 替换成你需要的模式</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NSTimer 其实就是 CFRunLoopTimerRef，它受 RunLoop 的 Mode 影响</p>
+</blockquote>
+<h4 id="GCD定时器"><a href="#GCD定时器" class="headerlink" title="GCD定时器"></a>GCD定时器</h4><p>创建定时器除了用NSTimer之外，还可以用GCD来构建：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) dispatch_source_t timer; <span class="comment">//定时器</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 先获取队列</span></div><div class="line">dispatch_queue_t queue = dispatch_get_main_queue();</div><div class="line"></div><div class="line"><span class="comment">// 创建定时器 (dispatch_source_t本质上是OC对象)</span></div><div class="line">self.<span class="section">timer</span> = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, queue);</div><div class="line"></div><div class="line"><span class="comment">// 设置定时器的各种属性</span></div><div class="line">dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(<span class="number">1.0</span> * NSEC_PER_SEC));</div><div class="line">uint64_t interval = (uint64_t)(<span class="number">1.0</span> * NSEC_PER_SEC);</div><div class="line">dispatch_source_set_timer(self.<span class="section">timer</span>, start, interval, <span class="number">0</span>);</div><div class="line">    </div><div class="line"><span class="comment">// 设置回调</span></div><div class="line">dispatch_source_set_event_handler(self.<span class="section">timer</span>, ^&#123;</div><div class="line">      NSLog(@<span class="string">"--&gt;&gt; %@"</span>, [NSThread currentThread]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 启动定时器</span></div><div class="line">dispatch_resume(self.<span class="section">timer</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>GCD定时器不受 RunLoop 的 Mode 影响<br>GCD定时器的精确度很高，如果担心 NSTimer 不够精确，可以使用GCD定时器</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/10/UICollectionView和UITableView的结合使用/" rel="next" title="UICollectionView和UITableView的结合使用">
+                <i class="fa fa-chevron-left"></i> UICollectionView和UITableView的结合使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/15/RunLoop学习笔记/"
+           data-title="RunLoop学习笔记" data-url="hwacdx.com/2016/09/15/RunLoop学习笔记/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="明镜亦非台" />
+          <p class="site-author-name" itemprop="name">明镜亦非台</p>
+          <p class="site-description motion-element" itemprop="description">90后iOS开发，现居广州</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是RunLoop"><span class="nav-number">1.</span> <span class="nav-text">什么是RunLoop ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RunLoop的处理逻辑"><span class="nav-number">2.</span> <span class="nav-text">RunLoop的处理逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图片版"><span class="nav-number">2.1.</span> <span class="nav-text">图片版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字版"><span class="nav-number">2.2.</span> <span class="nav-text">文字版</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时器"><span class="nav-number">3.</span> <span class="nav-text">定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NSTimer"><span class="nav-number">3.1.</span> <span class="nav-text">NSTimer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GCD定时器"><span class="nav-number">3.2.</span> <span class="nav-text">GCD定时器</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明镜亦非台</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hwacdx"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
